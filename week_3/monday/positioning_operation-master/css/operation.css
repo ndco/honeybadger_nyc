@@ -9,3 +9,31 @@ body {
   padding: 10px;
   width: 400px;
 }
+
+.board img {
+  position: relative;
+}
+
+.chip_breadbasket {
+  top: -194px;
+  left: 149px;
+  transform: rotate(-18deg);
+}
+
+.chip_butterflies {
+  top: -261px;
+  left: 216px;
+  transform: rotate(14deg);
+}
+
+.chip_wishbone {
+  top: -366px;
+  left: 45px;
+  transform: rotate(30deg);
+}
+
+.chip_heart {
+  top: -261px;
+  left: 216px;
+  transform: rotate(14deg);
+}
