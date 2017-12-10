@@ -1,24 +1,70 @@
 //Round 0
+//Write a function lengths that accepts a single parameter as an argument, namely an array of strings. The function should return an array of numbers where each number is the length of the corresponding string.
 var words = ["hello", "what", "is", "up", "dude"]
 
 function lengths (array) {
+    let arrayNum = [];
     for (i = 0; i < array.length; i ++) {
         console.log(array);
-        let wordLengths = [array[i].length.push];
-        console.log(wordLengths)
-        return wordLengths;
+        arrayNum[i] = array[i].length;
+        console.log(arrayNum);
+        
+        return arrayNum;
+
     }
 }
 
 
+//Round 1
+//Write a function fizzbuzzer that accepts a single parameter as an argument, a number, and will return the following:
+
+function fizzbuzzer (number) {
+    num = parseInt(number);
+
+    if (num % 3 === 0 && num % 5 === 0) {
+        console.log('FizzBuzz');
+    } else if (num % 5 === 0) {
+        console.log('Buzz');
+    } else if (num % 3 === 0) {
+        console.log('Fizz');
+    } else if (num % 3 !== 0 || num % 5 !== 0) {
+        console.log('McClane');
+    };
+};
 
 
 
+//Round 2
+//Write a Javascript function called transmogrifier This function should accept three arguments, which you can assume will be numbers. Your function should return the "transmogrified" result
+
+function transmogrifier (num1, num2, num3) {
+    result = Math.pow((num1 * num2), num3);
+    console.log(result);
+}
 
 
 
+//Round 3
+// Write a function called toonify that takes two parameters, accent and sentence.
 
+function toonify (accent, sentence) {
+    let indexSent = [];
+    let splitSent = sentence.split('');
 
+    let accS = 's';
+    let getIndex = splitSent.indexOf(accS);
+    let i = 0;
+
+    while (i < splitSent.length) {
+        indexSent.push(getIndex);
+        
+    }
+    
+    if (accent === 'daffy') {
+        
+        console.log(wordS);
+    }
+}
 
 
 
