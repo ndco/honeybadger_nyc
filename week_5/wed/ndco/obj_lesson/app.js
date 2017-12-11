@@ -34,7 +34,7 @@ function PokemonFactory(num, name, type, moves, hp) {
     this.hp = hp;
 };
 
-const pikachu = PokemonFactory(25, 'pikachu','light',['tackle', '100 bolt light', 'kick'], 100);
+const pikachu = new PokemonFactory(25, 'pikachu','light',['tackle', '100 bolt light', 'kick'], 100);
 
 
 

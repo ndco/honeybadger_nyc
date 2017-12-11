@@ -46,25 +46,38 @@ function transmogrifier (num1, num2, num3) {
 
 //Round 3
 // Write a function called toonify that takes two parameters, accent and sentence.
+const accList = {
+    daffy: {
+        originChar: 's',
+        newChar: 'th'
+    },
 
-function toonify (accent, sentence) {
-    let indexSent = [];
-    let splitSent = sentence.split('');
-
-    let accS = 's';
-    let getIndex = splitSent.indexOf(accS);
-    let i = 0;
-
-    while (i < splitSent.length) {
-        indexSent.push(getIndex);
-        
-    }
-    
-    if (accent === 'daffy') {
-        
-        console.log(wordS);
+    elmer: {
+        originChar: 'r',
+        newChar: 'w'
     }
 }
+function toonify (accent, sentence) {
+    let splitSent = sentence.split('');
+    console.log(splitSent);
+
+        for (let i = 0; i < sentence.length; i++) {
+            if (splitSent[i] === accList[accent].originChar) {
+                splitSent[i] = accList[accent].newChar;
+                console.log(splitSent);
+            }
+
+            rejoinSent = splitSent.join('');
+        }
+    
+    console.log(rejoinSent);
+    
+
+}
+    
+
+    
+
 
 
 
