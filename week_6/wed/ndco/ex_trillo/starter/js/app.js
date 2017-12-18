@@ -61,6 +61,13 @@ window.onload = function() {
 
     var newVal = document.getElementById('new-card-text').value;
 
+    function addCardList (node) {
+        node.addEventListener(click, function() {
+            document.createElement('li');
+            document.cre
+        })
+    }
+
     console.log(newVal);
 
 
