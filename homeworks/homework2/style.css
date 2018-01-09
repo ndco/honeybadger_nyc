@@ -1,25 +1,33 @@
-#myButtons {
-    height: 150px;
-    background-color: beige;
+body {
+    font-family: Gill Sans Extrabold, sans-serif;
 }
 
-#myButtons button {
-    display: block;
-    width: 10%;
-}
-
-
-#myElement {
-    display: inline-block;
-    width: 40%;
-    height: 150px;
-    text-align: center;
+    .exercise {
+        border: solid 5px burlywood;
+        display: block;
+        height: 200px;
+    }
+        .exercise button {
+            display: inline-block;
+            width: 10%;
+        }   
     
-    background-color: cornflowerblue;
-    color: white;
-}
+    .excerciseTitle {
+        font-size: 20px;
+        display: block;
+    }
 
-#myElement h1 {
-    padding: 10% 0;
-}
+
+
+    #myElement {
+        display: inline-block;
+        width: 40%;
+        height: 150px;
+        text-align: center;
+        margin: auto;       
+        background-color: cornflowerblue;
+        color: white;
+    }
+
+
 

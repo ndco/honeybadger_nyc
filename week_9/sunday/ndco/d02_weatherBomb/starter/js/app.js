@@ -11,7 +11,7 @@ $(function() {
             dataType: 'json',
             method: 'GET'
         })
-
+        console.log(result);
         return result;
     };
 
