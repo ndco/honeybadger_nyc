@@ -11,6 +11,14 @@ body {
             display: inline-block;
             width: 10%;
         }   
+
+        #newText {
+            display: inline-block;
+            border: dotted 2px black;
+            width: 150px;
+            text-align: center;
+            margin: 0;
+        }
     
     .excerciseTitle {
         font-size: 20px;
@@ -29,5 +37,7 @@ body {
         color: white;
     }
 
-
+    #emptyHeader {
+        border: dotted 2px black;
+    }
 
