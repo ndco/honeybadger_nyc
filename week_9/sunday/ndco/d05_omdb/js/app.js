@@ -5,12 +5,7 @@ $(function(){
     $('#search-form').keypress(function(e) {
         if (e.key == 'Enter') {
             console.log(e);
-            let userInput = $('#search-input').val();
-            console.log(userInput);
-            $('#search-results').empty();
-            getMovieResult(userInput)
-                .then(transformMovieResult)
-                .then(loadMovieData);
+            searchMovie();
         }
     });
 
