@@ -4,10 +4,14 @@ window.onload = function() {
 
     const buttons = document.querySelectorAll('.exercise button');
     console.log(buttons);
+    console.log(buttons[0]);
 
     const largeElemet = document.getElementById('myElement');
 
-    const myText = document.getElementsByClassName('3');
+    // console.log(document)
+
+    const myText = document.querySelectorAll('.exercise h1');
+    console.log(myText);
 
     const mySubmit = document.getElementById('submit');
 
@@ -18,7 +22,7 @@ window.onload = function() {
  
     addHoverListener(largeElemet);
 
-    addKeyPressListner(myText);
+    addKeyPressListner(myText[0]);
 
     addUserValidationListener(submit);
 
@@ -56,10 +60,13 @@ window.onload = function() {
         // - When the user presses that key, the text of the H1 should show the value of the key they have pressed.
         // - Example: If the user presses "J", the text inside the H1 should be "J".
     function addKeyPressListner (node) {
-        node.addEventListener('keypress', function(e) {
+        console.log(node);
+        document.addEventListener('keypress', function(e) {
             const keyName = e.key;
+            console.log(e);
 
             let hText = document.getElementById('emptyHeader');
+            console.log(hText);
             if (hText.innerHTML === undefined) {
                 hText.innerHTML = keyName;
             } else {
@@ -75,7 +82,7 @@ window.onload = function() {
             const password = document.getElementById('userPswd').value;
             const email = document.getElementById('userEmail').value;
 
-            if (username ==='' || password ==='' || email ==='' || password.search(/[0-9]/) !== -1) {
+            if (username.search(/[0-9]/) !== -1 && password==='12345678') {
                 alert ('login successful!')
             } else {
                 alert ('incorrect!')
