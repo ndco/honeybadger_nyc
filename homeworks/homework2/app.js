@@ -74,7 +74,7 @@ window.onload = function() {
             }
         })
     }
-
+  
 
     function addUserValidationListener (node) {
         node.addEventListener('click', function(e) {
