@@ -1,0 +1,15 @@
+{
+  "name": "npm_practice",
+  "version": "1.0.0",
+  "description": "initial pkg setup",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ndco",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
+}
