@@ -1,32 +1,17 @@
 window.onload = function() {
-
-    //Create an HTML page with two buttons that argue with each other. When one button is clicked, the text "I'm right" should be placed next to it. When the other button is clicked, the text is replaced with, "No, I'm right!"
-
     const buttons = document.querySelectorAll('.exercise button');
-    console.log(buttons);
-    console.log(buttons[0]);
-
     const largeElemet = document.getElementById('myElement');
-
-    // console.log(document)
-
     const myText = document.querySelectorAll('.exercise h1');
-    console.log(myText);
-
     const mySubmit = document.getElementById('submit');
-
 
     for (i = 0; i < buttons.length; i ++) {
         addTextListener(buttons[i]);
-    }
- 
-    addHoverListener(largeElemet);
-
+    };
+     addHoverListener(largeElemet);
     addKeyPressListner(myText[0]);
-
     addUserValidationListener(submit);
 
-
+    //Create an HTML page with two buttons that argue with each other. When one button is clicked, the text "I'm right" should be placed next to it. When the other button is clicked, the text is replaced with, "No, I'm right!"
     function addTextListener (node) {
         node.addEventListener('click', function(e) {
             let newText = document.getElementById('newText');
@@ -48,7 +33,6 @@ window.onload = function() {
 
 
     //Create an HTML page with a large element on the page that says "Don't hover over me" inside of it.When you hover over the element, send an alert to the user that says, "Hey, I told you not to hover over me!"
-
     function addHoverListener (node) {
         node.addEventListener('mouseover', function(e) {
             alert('Hey, I told you not to hover over me!');
@@ -67,15 +51,11 @@ window.onload = function() {
 
             let hText = document.getElementById('emptyHeader');
             console.log(hText);
-            if (hText.innerHTML === undefined) {
-                hText.innerHTML = keyName;
-            } else {
-                hText.innerHTML += keyName;
-            }
+            hText.innerHTML = keyName;
         })
     }
   
-
+    //Create an HTML page with a form. The form should include inputs for a username, email, and password as well as a submit button.
     function addUserValidationListener (node) {
         node.addEventListener('click', function(e) {
             const username = document.getElementById('userId').value;

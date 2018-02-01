@@ -1,0 +1,9 @@
+{{#each tracks}}
+{{!-- this is forEach-like function in express-handlebars to present data for array-type like data --}}
+    <h1>{{artistName}}</h1>
+    <h2>{{albumName}}</h2>
+    <h2 class="track-name" data-id="{{trackId}}">{{trackName}}</h2>
+    <img src={{albumArtUrl}} alt="">
+
+
+{{/each}}
