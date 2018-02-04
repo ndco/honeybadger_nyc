@@ -135,8 +135,9 @@
             }) 
             .then(function (data) {
                 console.log(data.album.preview_url);
-            return data.album.preview_url;
-                res.render(data.album.preview_url);
+                return data.album.preview_url;
+            
+                res.render('artists', data.album.preview_url);
             })        
     })
 
