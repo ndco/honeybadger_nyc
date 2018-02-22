@@ -63,8 +63,7 @@ window.onload = function() {
             const email = document.getElementById('userEmail').value;
             let loginSuccessMsg = document.createElement('h1');
             if (username.search(/[0-9]/) !== -1 && password==='12345678') {
-                
-
+                alert('login successful!')
             } else {
                 alert ('incorrect!')
             }

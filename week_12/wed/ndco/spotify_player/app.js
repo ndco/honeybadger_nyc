@@ -111,6 +111,7 @@
                 return getTopTracks(_access_token, id);
             })
             .then(function (topTracks) {
+                // res.send(topTracks);
                 const normalizedTracks = topTracks.tracks.map(function (track) {
                     return normalizeTrackData(track);
                 })
