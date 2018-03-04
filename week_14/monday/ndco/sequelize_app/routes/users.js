@@ -3,18 +3,19 @@ var router = express.Router();
 const User = require('../models/index').user;
 /* GET users listing. */
 
-router.get('/'), function (req, res) {
-  user.findAll().then(function (users) {
+router.get('/', function (req, res) {
+  console.log(res)
+  User.findAll().then(function (users) {
     res.send(users);
   });
-};
+});
 
-router.get('/:id'), function (req, res) {
+router.get('/:id', function (req, res) {
   User.findById(req.params.id)
     .then(function (user) {
       res.send(user);
-    })
-}
+    });
+});
 
 router.get('/:first_name/:last_name/:email', function (req, res, next) {
   // res.send('respond with a resource');
