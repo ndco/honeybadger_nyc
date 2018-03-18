@@ -20,7 +20,7 @@ class NewCardInput extends Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(this.state)
-    }).then( () => {
+    }).then(() => {
       this.setState({
         task: ''
       });
@@ -36,7 +36,7 @@ class NewCardInput extends Component {
   render() {
     return (
       <div id="new-card">
-        <input id="new-card-text" type="text" placeholder="What do you need to do?" value={this.state.task} onChange={this.handleInput} />
+        <input id="new-card-text" type="text" placeholder="What do you need to do?" value={this.state.task} onChange={this.handleInput}/>
         <button id="new-card-button" onClick={this.handleSubmit}>Add Card</button>
       </div>
     )
