@@ -6,8 +6,8 @@ class Trillo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            completedCards= [],
-            uncompletedCards= []
+            completedCards: [],
+            uncompletedCards: []
         }
 
         this.handleCardDelete = this.handleCardDelete.bind(this);
@@ -37,6 +37,8 @@ class Trillo extends Component {
         fetch('/cards')
             .then((response) => {
                 response.json().then((json) =>{
+                    const cards = this.sortCardsByCompletion(json);
+                    
                     this.setState({
                         completedCards: cards.completedCards,
                         uncompletedCards: cards.uncompletedCards

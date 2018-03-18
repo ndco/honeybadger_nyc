@@ -30,9 +30,9 @@ router.put('/:id', function (req, res) {
 });
 
 // DELETE
-router.delete('/:id', function(req, res) {
+router.delete('/:id', function (req, res) {
 	Card.findById(req.params.id)
-		.then(function(card) {
+		.then(function (card) {
 			card.destroy();
 			res.send(`Card ${req.params.id} destroyed`);
 		});

@@ -8,11 +8,11 @@ class NewCardInput extends Component {
     };
 
     this.handleInput = this.handleInput.bind(this);
-    this.handleSubmit = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
-    console.log(JSON.stringify(this.state));
+    console.log(e);
     fetch('/cards', {
       method: 'POST',
       headers: {
