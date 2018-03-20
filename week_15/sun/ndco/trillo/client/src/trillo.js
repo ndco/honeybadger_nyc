@@ -37,6 +37,7 @@ class Trillo extends Component {
         fetch('/cards')
             .then((response) => {
                 response.json().then((json) =>{
+                    console.log(json);
                     const cards = this.sortCardsByCompletion(json);
                     
                     this.setState({
