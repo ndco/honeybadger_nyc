@@ -16,7 +16,6 @@ class ArticleList extends Component {
                     this.setState({
                         data
                     });
-                    console.log(this.state.data); 
                 });
             });
     }
