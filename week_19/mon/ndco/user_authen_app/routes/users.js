@@ -1,16 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var express = require('express');
-var router = require('router');
 
+module.exports = function (passport) {
+  
+  // POST /user/signup
+  router.post('/signup', passport.authenticate('local-signup'), function (req, res) {
+    res.json({user: req.user}) // passport will add this to the req
+  });
 
-//POST /user/signup
-module.exports = function(passport) => {
-  router.post('/signup', function (req, res) {
-    res.send('got the signup request')
-  })
-
-}
-
-return router;
-
+  return router;
+};
