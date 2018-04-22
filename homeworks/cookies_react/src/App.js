@@ -8,16 +8,29 @@ class App extends Component {
     super(props);
     
     this.state = {
+      // cookies: [
+      //   chocolate,
+      //   sugar,
+      //   lemon
+      // ],
       totalCookies: this.getCurrentCookie
     }
 
     this.updateCookies = this.updateCookies.bind(this);
   }
 
-  updateCookies() {
-    console.log(this.refs)
+  componentDidMount() {    
+    this.setState({
+      totalCookies: Cookies.get('cookie')
+    });
+  }
+
+  updateCookies(e) {
     let getCurrentCookie = Cookies.get('cookie');
-    if (this.refs === 'add') {
+    if (getCurrentCookie === undefined) {
+        Cookies.set('cookie', 1);
+    }
+    else if (e.target.className === 'add') {
       Cookies.set('cookie', parseInt(getCurrentCookie) + 1);
     } else {
       Cookies.set('cookie', parseInt(getCurrentCookie) - 1);
@@ -25,16 +38,21 @@ class App extends Component {
     this.setState({
       totalCookies: getCurrentCookie
     });
-
   }
   
+  clearCookies() {
+    Cookies.remove('cookie');
+  }
+
   render() {
    return (
      <div>
        <h1>Welcome to React</h1>
        <h2>Cookies {this.state.totalCookies}</h2>
-       <button type="button" onClick={this.updateCookies} ref="add" value="add">Add(+)</button>
-       <button type="button" onClick={this.updateCookies} ref="remove">Remove(-)</button>
+       <button type="button" onClick={this.updateCookies} className="add" ref="add"> Add </button>
+       <button type="button" onClick={this.updateCookies} className="remove" ref="remove"> Remove </button>
+       <button type="button" onClick={this.clearCookies} > Clear </button>
+
      </div>
    );
  }
