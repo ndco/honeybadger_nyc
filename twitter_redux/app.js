@@ -8,8 +8,8 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 
 const tweets = require('./routes/tweets');
-const users = require('./routes/users')(passport);
-require('./strategies/passport-local')(passport);
+const users = require('./routes/users',(passport));
+require('./strategies/passport-local',(passport));
 
 
 const app = express();
