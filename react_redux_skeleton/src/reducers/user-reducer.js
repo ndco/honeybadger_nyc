@@ -13,7 +13,11 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
     switch(action.type) {
+<<<<<<< HEAD
         case fetchUserType: 
+=======
+        case fetchUserType:
+>>>>>>> 5f26aa90c960d0d078b503bc9d9fdd90344cda9a
             return {
                 ...state,
                 fetching: false,
@@ -28,7 +32,11 @@ export default function reducer(state = initialState, action) {
                     age: action.payload
                 }
             }
+<<<<<<< HEAD
         case setUserNameType: 
+=======
+        case setUserNameType:
+>>>>>>> 5f26aa90c960d0d078b503bc9d9fdd90344cda9a
             return {
                 ...state,
                 user: {
@@ -37,6 +45,10 @@ export default function reducer(state = initialState, action) {
                 }
             }
         default:
+<<<<<<< HEAD
             return state; 
+=======
+            return state;
+>>>>>>> 5f26aa90c960d0d078b503bc9d9fdd90344cda9a
     }
 }

@@ -7,7 +7,11 @@ import * as tweetActions from '../actions/tweets-actions';
 class Layout extends Component {
     constructor(props) {
         super(props);
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 5f26aa90c960d0d078b503bc9d9fdd90344cda9a
         this.fetchTweets = this.fetchTweets.bind(this);
     }
 
@@ -16,6 +20,7 @@ class Layout extends Component {
         this.fetchTweets();
     }
 
+<<<<<<< HEAD
     componentDidMount() {
     }
 
@@ -25,10 +30,19 @@ class Layout extends Component {
 
     updateUserName() {
         this.props.userActions.setUserName('test');
+=======
+    fetchTweets() {
+        this.props.tweetsActions.fetchTweets();
+    }
+
+    updateUserName() {
+        this.props.userActions.setUserName('John');
+>>>>>>> 5f26aa90c960d0d078b503bc9d9fdd90344cda9a
     }
 
     render() {
         const { user, tweets } = this.props;
+<<<<<<< HEAD
         console.log(user);
         
         if(!tweets.length) {
@@ -40,12 +54,20 @@ class Layout extends Component {
                 </div>
             )
         }
+=======
+>>>>>>> 5f26aa90c960d0d078b503bc9d9fdd90344cda9a
 
         const mappedTweets = tweets.map(tweet => {
             return (
                 <li key={tweet.id}>
+<<<<<<< HEAD
                     <span>{tweet.author}</span>
                     <span>{tweet.content}</span>
+=======
+                    <span>{tweet.content}</span>
+                    <br/>
+                    <span>{tweet.author}</span>
+>>>>>>> 5f26aa90c960d0d078b503bc9d9fdd90344cda9a
                 </li>
             )
         });
@@ -69,8 +91,16 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         userActions: bindActionCreators(userActions, dispatch),
+<<<<<<< HEAD
         tweetActions: bindActionCreators(tweetActions, dispatch)
     }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Layout);
+=======
+        tweetsActions: bindActionCreators(tweetActions, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);
+>>>>>>> 5f26aa90c960d0d078b503bc9d9fdd90344cda9a

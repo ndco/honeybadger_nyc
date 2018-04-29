@@ -1,24 +1,25 @@
-const LocalStategy = require('passport-local').Strategy;
+const LocalStrategy = require('passport-local').Strategy;
 const User = require('../models').user;
 const bcrypt = require('bcrypt');
 
 function processSignupCallback(req, email, password, done) {
+    console.log('JHWJHFSKJHFSJKFHSJKHFSKJ');
     User.findOne({
         where: {
-            'email':email
+            email
         },
         attributes: ['id']
     })
     .then(function(user) {
-        if(user) {
+        if (user) {
             return done(null, false);
-        } 
-        
-        const userToCrate = req.body;
+        }
 
-        bcrypt.hash(userToCrate.password, 10, function(err, hasg) {
-            userToCrate.password = hash;
-            User.create(userToCrate)
+        const userToCreate = req.body;
+
+        bcrypt.hash(userToCreate.password, 10, function(err, hash) {
+            userToCreate.password = hash;
+            User.create(userToCreate)
                 .then(function(user) {
                     user.password = undefined;
                     return done(null, user);
@@ -41,26 +42,23 @@ function processLoginCallback(email, password, done) {
         bcrypt.compare(password, user.password, function(err, result) {
             user.password = undefined;
             return result ? done(null, user) : done(null, err);
-        })
-    })
-    .catch(function(err) {
-        return done(err, false);
+        });
     });
 }
 
-module.export = function(passport) {
+module.exports = function(passport) {
     passport.serializeUser(function(user, done) {
         done(null, user.id);
     });
 
-    passport.use('local-signup', new LocalStategy({
+    passport.use('local-signup', new LocalStrategy({
         usernameField: 'email',
         passwordField: 'password',
-        passReqToCallback: true  
+        passReqToCallback: true
     }, processSignupCallback));
 
-    passport.use('local-login', new LocalStategy({
+    passport.use('local-login', new LocalStrategy({
         usernameField: 'email',
-        passwordField: 'password'      
+        passwordField: 'password'
     }, processLoginCallback));
 }

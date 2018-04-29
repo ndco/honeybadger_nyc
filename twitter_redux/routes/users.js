@@ -20,8 +20,7 @@ module.exports = function (passport) {
 
 	router.post('/login', passport.authenticate('local-login'), function(req, res) {
 		res.json({ user: req.user });
-	})
+	});
 
 	return router;
-
 };
