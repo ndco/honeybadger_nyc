@@ -8,7 +8,7 @@ export function fetchTweets() {
     return function(dispatch) {
         dispatch({ type: fetchTweetsType });
 
-        axios.get('http://rest.learncode.academy/api/reacttest/tweets')
+        axios.get('/tweets')
             .then((response) => {
                 dispatch({ type: fetchTweetsFulfilledType, payload: response.data })
             })
