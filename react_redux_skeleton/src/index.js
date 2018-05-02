@@ -5,11 +5,13 @@ import { ConnectedRouter } from 'react-router-redux';
 import store, { history } from './store';
 import Layout from './components/layout'
 
+const target = document.getElementById('root');
+
 ReactDOM.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
             <Layout />
         </ConnectedRouter>
     </Provider>
-    , document.getElementById('root')
+    , target
 );

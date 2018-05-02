@@ -1,13 +1,18 @@
 import React from 'react';
+import { Field, reduxForm } from 'redux-form';
 
-const CredentialsForm = ( {  handler } ) => {
+const CredentialsForm = props => {
+    const { handleSubmit, formHandler } = props;
+
     return (
-        <form onSubmit={handler}>
-            <input className='email-input' placeholder='enter email'/>
-            <input className='password-input' placeholder='enter password' type='password'/>
-            <button className='credentials-submit' type='submit'>Submit</button>
+        <form onSubmit={handleSubmit(formHandler)}>
+            <Field name='email' component='input' placeholder='email' type='email'/>
+            <Field name='password' component='input' placeholder='password' type='password'/>
+            <button type='submit'>Submit</button>
         </form>
     )
 }
 
-export default CredentialsForm;
+export default reduxForm({
+    form: 'userCredentials'
+})(CredentialsForm);
