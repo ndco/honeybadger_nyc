@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
-import store from './store';
+import store, { history } from './store';
 import Layout from './components/layout'
 
 ReactDOM.render(
     <Provider store={store}>
-        <ConnectedRouter>
+        <ConnectedRouter history={history}>
             <Layout />
         </ConnectedRouter>
     </Provider>
