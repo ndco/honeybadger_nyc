@@ -3,7 +3,7 @@ const User = require('../models').user;
 const bcrypt = require('bcrypt');
 
 function processSignupCallback(req, email, password, done) {
-    console.log('JHWJHFSKJHFSJKFHSJKHFSKJ');
+    console.log('test', req);
     User.findOne({
         where: {
             email
