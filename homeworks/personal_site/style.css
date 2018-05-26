@@ -1,0 +1,95 @@
+.logo {
+	display: inline-block;
+	vertical-align: top;
+	height: 10%;
+	width: 10%;
+}
+
+.navigation > a {
+    text-decoration: none;
+    margin-right: 80px;
+    padding: 10px;
+	float: right;
+    font-family: Arial, serif;
+    color: black;
+}
+
+a.active {
+	display: block;
+    background-color: black;
+	color: white;
+	font-weight: bold;
+}
+
+a:hover:not(.active) {
+    background-color: grey;
+    color: white;
+}
+
+.socialmedia a {
+	text-decoration: none;
+	width: 50px;
+}
+
+.socialmedia img {
+	width: 30px;
+	height: 30px;
+}
+
+.main {
+	font-family: Arial, serif;
+	width: 70%;
+	margin: 0 auto;
+	text-align: justify;
+}
+
+.header	{
+ 	font-family: Arial, serif;
+ 	font-size: 30px;
+ 	font-weight: bold;	
+ 	width: 300px
+	border: 14px red;
+	background-color: lightblue;
+	text-align: left;
+}
+
+
+.backtotop {
+ 	font-family: Arial, serif;
+ 	font-size: 15px;	
+ 	text-decoration: none;
+ 	color: black;
+ 	margin: 20px;
+}
+
+/*style for gallary.html*/
+.myimages img {
+	display: inline-block;
+	margin: 0 auto;
+	width:500px;
+	padding: 10px;
+}
+
+@media (max-width: 767px) {
+	.logo {
+		height: 15%;
+		width: 15%;
+	}
+
+	.navigation > a {
+	    margin-right: 5px;
+	    padding: 5px;
+	    font-size: 12px;
+	}
+
+	.socialmedia img {
+	width: 15px;
+	height: 15px;
+	}
+
+	.myimages img {
+		display: block;
+		width:100%;
+	}
+}
+
